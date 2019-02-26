@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css"> -->
+    <!-- <script src="main.js"></script> -->
+    <!-- <script src="echarts.min.js"></script> -->
+    <style>
+        /* #one {
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            position: absolute;
+        } */
+    </style>
+    <script>
+        window.onload = function () {
+            // var one = document.getElementById('one');
+            // one.onmousedown = function () {
+            //     document.onmousemove = function (e) {
+            //         one.style.left = e.clientX + 'px';
+            //         one.style.top = e.clientY + 'px';
+            //     }
+            // }
+
+            // 进程条
+            var pro = document.getElementsByTagName("progress")[0];
+            var t = setInterval(function () {
+                if (pro.value == 10) {
+                    clearInterval(t);
+                    document.body.removeChild(pro);
+                    var spans = document.createElement('span');
+                    spans.innerHTML = '加载完成';
+                    spans.style.color = 'red';
+                    document.body.appendChild(spans);
+                } else {
+                    pro.value++;
+                }
+            }, 1000)
+        }
+    </script>
+</head>
+
+<body>
+    <!-- <h1>欢迎您</h1> -->
+    <!-- <div id="main" style="width: 600px;height: 400px;"></div> -->
+    <!-- <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data: ['销量']
+            },
+            xAxis: {
+                data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+            },
+            yAxis: {
+            },
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script> -->
+
+    <!-- datalist列表 -->
+    <!-- <div>请输入姓名：<input type="text" list="li" />
+        <datalist id="li">
+            <option>王五</option>
+            <option>李四</option>
+            <option>王小二</option>
+            <option>小明</option>
+        </datalist>
+    </div> -->
+
+    <!-- 拖曳小方块 -->
+    <!-- <div id="one"></div> -->
+
+    <!-- 进程条 -->
+    <progress min="0" max="10" value="5"></progress>
+    <h1>1</h1>
+</body>
+
+</html>
